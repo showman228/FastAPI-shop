@@ -73,4 +73,3 @@ class CartService:
                             total=total_price,
                             items_count=total_items
                             )
-
