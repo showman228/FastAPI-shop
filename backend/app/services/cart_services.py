@@ -1,7 +1,7 @@
 from sqlalchemy.orm import Session
-from backend.app.repositories.product_repositories import ProductRepositories
+from ..repositories.product_repositories import ProductRepositories
 from typing import Dict
-from backend.app.schemas.cart import CartItemCreate, CartResponse, CartItemUpdate, CartItemUpdate, CartItem
+from ..schemas.cart import CartItemCreate, CartResponse, CartItemUpdate, CartItemUpdate, CartItem
 from fastapi import HTTPException, status
 
 class CartService:

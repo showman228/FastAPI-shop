@@ -1,8 +1,8 @@
 from sqlalchemy.orm import Session
-from backend.app.schemas.product import ProductResponse, ProductCreate, ProductListResponse
-from backend.app.repositories.product_repositories import ProductRepositories
-from backend.app.schemas.category import CategoryResponse, CategoryCreate
-from backend.app.repositories.category_repositories import CategoryRepository
+from ..schemas.product import ProductResponse, ProductCreate, ProductListResponse
+from ..repositories.product_repositories import ProductRepositories
+from ..schemas.category import CategoryResponse, CategoryCreate
+from ..repositories.category_repositories import CategoryRepository
 from fastapi import HTTPException, status
 from typing import List
 

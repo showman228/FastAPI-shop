@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends, status
 from sqlalchemy.orm import Session
 from typing import Dict
-from backend.app.database import get_db
+from ..database import get_db
 from ..schemas.cart import CartResponse, CartItemCreate, CartItemUpdate
 from ..services.cart_services import CartService
 from pydantic import BaseModel

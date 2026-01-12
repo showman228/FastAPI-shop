@@ -1,6 +1,6 @@
 from sqlalchemy.orm import Session
-from backend.app.schemas.category import CategoryResponse, CategoryCreate
-from backend.app.repositories.category_repositories import CategoryRepository
+from ..schemas.category import CategoryResponse, CategoryCreate
+from ..repositories.category_repositories import CategoryRepository
 from fastapi import HTTPException, status
 from typing import List
 
