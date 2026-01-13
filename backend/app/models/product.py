@@ -1,11 +1,10 @@
-from datetime import datetime
-from sqlalchemy import Column, String, Integer, Float, DateTime, ForeignKey, Text
+from sqlalchemy import Column, Integer, String, Text, Float, DateTime, ForeignKey
 from sqlalchemy.orm import relationship
+from datetime import datetime
 from ..database import Base
 
-
 class Product(Base):
-    __tablename__ = "product"
+    __tablename__ = "products"
 
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String, nullable=False, index=True)
@@ -15,7 +14,7 @@ class Product(Base):
     image_url = Column(String)
     created_at = Column(DateTime, default=datetime.utcnow)
 
-    category = relationship("Category", backref="products")
+    category = relationship("Category", back_populates="products")
 
     def __repr__(self):
-        return f"<Product(id={self.id}, name={self.name}, price={self.price})>"
+        return f"<Product(id={self.id}, name='{self.nacme}', price={self.price})>"
