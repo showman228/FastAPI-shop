@@ -11,6 +11,6 @@ class CategoryResponse(CategoryBase):
     id: int  = Field(..., description="Unique category ID")
 
     class Config:
-        form_attributes = True # позволяет напрямую создавать схему напрямую из модели
+        from_attributes = True # позволяет напрямую создавать схему напрямую из модели
 
 

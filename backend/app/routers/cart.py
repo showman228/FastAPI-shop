@@ -7,7 +7,7 @@ from ..services.cart_services import CartService
 from pydantic import BaseModel
 
 router = APIRouter(
-    prefix="/cart",
+    prefix="/api/cart",
     tags=["Cart"]
 )
 
@@ -32,7 +32,7 @@ def add_to_cart(request: AddToCartRequest, db: Session = Depends(get_db)):
     updated_cart = services.add_to_cart(cart_data=request.cart, item=item)
     return {"cart": updated_cart}
 
-router.get("", response_model=CartResponse, status_code=status.HTTP_200_OK)
+@router.post("", response_model=CartResponse, status_code=status.HTTP_200_OK)
 def get_cart(cart_data: Dict[int, int], db: Session = Depends(get_db)):
     services = CartService(db)
     return services.get_cart_details(cart_data)
